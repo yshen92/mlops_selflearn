@@ -1,0 +1,57 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.9.16",
+    "heartbeatAt": "2023-06-03T15:52:54.791311",
+    "startedAt": "2023-06-03T15:52:53.173488",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--wandb_project",
+        "wandb-zoomcamp-homework",
+        "--wandb_entity",
+        "yuanshen",
+        "--data_artifact",
+        "yuanshen/wandb-zoomcamp-homework/NYC-Taxi:v0"
+    ],
+    "state": "running",
+    "program": "E:\\Projects\\Git\\mlops_selflearn\\02-experiment-tracking\\homework\\wandb\\homework-wandb\\train.py",
+    "codePath": "02-experiment-tracking\\homework\\wandb\\homework-wandb\\train.py",
+    "git": {
+        "remote": "git@github.com:yshen92/mlops_selflearn.git",
+        "commit": "3c55208fe835462fc23781532ce56a683c2403d3"
+    },
+    "email": "yshen_92@hotmail.com",
+    "root": "E:/Projects/Git/mlops_selflearn",
+    "host": "LAPTOP-9HOS6K4P",
+    "username": "yshen",
+    "executable": "D:\\Softwares\\anaconda3\\envs\\exp-tracking-env\\python.exe",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3201.0,
+        "min": 0.0,
+        "max": 3201.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3201.0,
+            "min": 0.0,
+            "max": 3201.0
+        }
+    ],
+    "disk": {
+        "total": 439.45214462280273,
+        "used": 8.279216766357422
+    },
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3070 Laptop GPU",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 31.855525970458984
+    }
+}
