@@ -6,7 +6,7 @@ description: The main training pipeline
 version: fef7f2a75ae1a80cea1c695afab65300
 # The work queue that will handle this deployment's runs
 work_queue_name: taxi-pool
-work_pool_name: null
+work_pool_name: taxi-pool
 tags: []
 parameters: {}
 schedule: null
