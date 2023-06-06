@@ -3,8 +3,9 @@ from prefect_aws import S3Bucket, AwsCredentials
 
 
 def create_aws_creds_block():
+    ## To replace access keys
     my_aws_creds_obj = AwsCredentials(
-        aws_access_key_id="AKIA5YO3ZSZMOGCBDZHE", aws_secret_access_key="C5cS6JTXglDMe4pPQRQDoIS345P/KxDMDN/scuuB"
+        aws_access_key_id="xxxxxxxxx", aws_secret_access_key="xxxxxxxxxxxxxxxx"
     )
     my_aws_creds_obj.save(name="ys-aws-creds", overwrite=True)
 
