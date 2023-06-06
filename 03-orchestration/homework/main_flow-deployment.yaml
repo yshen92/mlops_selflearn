@@ -1,0 +1,50 @@
+###
+### A complete description of a Prefect Deployment for flow 'main-flow'
+###
+name: orcheatrate-homework
+description: The main training pipeline
+version: fef7f2a75ae1a80cea1c695afab65300
+# The work queue that will handle this deployment's runs
+work_queue_name: taxi-pool
+work_pool_name: null
+tags: []
+parameters: {}
+schedule: null
+is_schedule_active: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: main-flow
+manifest_path: null
+storage: null
+path: E:\Projects\Git\mlops_selflearn\03-orchestration\homework
+entrypoint: orchestrate.py:main_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    train_path:
+      title: train_path
+      default: ./03-orchestration/old_data/green_tripdata_2021-01.parquet
+      position: 0
+      type: string
+    val_path:
+      title: val_path
+      default: ./03-orchestration/old_data/green_tripdata_2021-02.parquet
+      position: 1
+      type: string
+  required: null
+  definitions: null
+timestamp: '2023-06-06T15:43:17.249766+00:00'
