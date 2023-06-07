@@ -11,6 +11,7 @@ import xgboost as xgb
 from datetime import date
 from prefect import flow, task
 from prefect.artifacts import create_markdown_artifact
+from prefect_email import EmailServerCredentials, email_send_message
 
 
 @task(retries=3, retry_delay_seconds=2, name="Read taxi data")
@@ -129,12 +130,14 @@ def train_best_model(
     return None
 
 
-@flow
+@flow()
 def main_flow(
-    train_path: str = "./03-orchestration/old_data/green_tripdata_2021-01.parquet",
-    val_path: str = "./03-orchestration/old_data/green_tripdata_2021-02.parquet",
+    train_path: str = "./data/green_tripdata_2023-01.parquet",
+    val_path: str = "./data/green_tripdata_2023-02.parquet",
 ) -> None:
     """The main training pipeline"""
+    # Note: because the entry point is homework/ the deployment can't find relative ../ folders
+    # Only folders and files in the homework/ folder is 'visible' to deployment runs
 
     # MLflow settings
     mlflow.set_tracking_uri("sqlite:///mlflow.db")
@@ -149,6 +152,16 @@ def main_flow(
 
     # Train
     train_best_model(X_train, X_val, y_train, y_val, dv)
+
+    # Notify email using Email Server Config set-up
+    email_server_credentials = EmailServerCredentials.load("nys-gmail")
+    email_address = "PLACEHOLDER_EMAIL_TO_RECEIVE_NOTIFICATION"
+    subject = email_send_message.with_options(name=f"email {email_address}").submit(
+        email_server_credentials=email_server_credentials,
+        subject="Taxi Flow Run",
+        msg="To notify that the taxi flow run has completed successfully!",
+        email_to=email_address,
+    )
 
 
 if __name__ == "__main__":
