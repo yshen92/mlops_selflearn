@@ -5,9 +5,10 @@ import mlflow
 from flask import Flask, request, jsonify
 
 
-RUN_ID = os.getenv('RUN_ID')
+# RUN_ID = os.getenv('RUN_ID')
+RUN_ID = 'f9d21e8d85ae4afa8e3da90a0648e9c5'
 
-logged_model = f's3://mlflow-models-alexey/1/{RUN_ID}/artifacts/model'
+logged_model = f's3://mlflow-week4-web-service/1/{RUN_ID}/artifacts/model'
 # logged_model = f'runs:/{RUN_ID}/model'
 model = mlflow.pyfunc.load_model(logged_model)
 
