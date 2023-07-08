@@ -1,0 +1,10 @@
+[tool.pylint.messages_control]
+
+disable = [
+    'missing-module-docstring',
+    'missing-function-docstring',
+    'invalid-name',
+    'line-too-long',
+    'redefined-outer-name',
+    'duplicate-code'
+]
